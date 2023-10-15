@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color:#CCCCFF;
+}
+body{
+    background: rgb(34, 33, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+ 
+
+}
+.container{
+   position: relative;
+}
+.clock{
+     width: 300px;
+     height: 300px;
+     border-radius: 50%;
+     background-color:rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5) ;
+    box-shadow: 0px 0px 30px aqua;
+    inset: 0px 0px 30px aqua ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg *var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+.clock span b{
+    transform: rotate(calc(-30deg *var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    color: aqua;
+}
+.hand{
+    
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+
+}
+
+.hand::before{
+    content: '';
+    position: absolute;
+    top: -110px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    box-shadow: 0 0 20px var(--clr) ;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 10px;
+   
+}
+
+/* degital clock */
+
+#time{
+margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border: 2px solid aquamarine;
+    border-radius: 20px;
+    background-color: #626567;
+    box-shadow:0 5px 0 5px plum ;
+}
+#time div{
+    color: var(--clr);
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after
+{
+    content: ':' ;
+    display: inline-block;
+  margin-left: 4px;
+
+}
+
+
+#time div:nth-child(2)::after{
+animation: animate 1s steps(1) infinite;
+}
+@keyframes animate {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+.lathi{
+    position: absolute;
+ 
+    height: 130px;
+    bottom: 30px;
+    left: 146px;
+    width: 15px;
+    z-index: -12344;
+    background-color:#9FE2BF;
+}
+.clocks{
+    position: relative;
+}
